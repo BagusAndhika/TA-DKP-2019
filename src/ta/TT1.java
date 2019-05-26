@@ -3,11 +3,14 @@ package ta;
 import java.util.LinkedList;
 import java.util.Queue;
 public class TT1 extends javax.swing.JFrame {
-
+    Queue<String> antrianNama = new LinkedList<String>();
+    Queue<String> antrianTanggal = new LinkedList<String>();
+    Queue<String> antrianBulan = new LinkedList<String>();
+    Queue<String> antrianTahun = new LinkedList<String>();
     public TT1() {
         initComponents();
     }
-    Queue<String> antrian = new LinkedList<String>();
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,8 +33,13 @@ public class TT1 extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        Bln = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        Thn = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnMasuk.setText("Masuk");
         btnMasuk.addActionListener(new java.awt.event.ActionListener() {
@@ -39,6 +47,7 @@ public class TT1 extends javax.swing.JFrame {
                 btnMasukActionPerformed(evt);
             }
         });
+        getContentPane().add(btnMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 90, -1));
 
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -46,6 +55,7 @@ public class TT1 extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 90, -1));
 
         btnKeluar.setText("Keluar");
         btnKeluar.addActionListener(new java.awt.event.ActionListener() {
@@ -53,24 +63,29 @@ public class TT1 extends javax.swing.JFrame {
                 btnKeluarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 90, -1));
 
         kolomReport.setColumns(20);
         kolomReport.setRows(5);
         jScrollPane1.setViewportView(kolomReport);
 
-        Nama.setBorder(null);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 290, 170));
+
+        Nama.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NamaActionPerformed(evt);
             }
         });
+        getContentPane().add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 120, 30));
 
-        Tgl.setBorder(null);
+        Tgl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Tgl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TglActionPerformed(evt);
             }
         });
+        getContentPane().add(Tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 40, 30));
 
         comboServis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cek Kondisi", "Pasang Hardware", "Ganti Hardware", "Install Ulang", "Install App", " " }));
         comboServis.addActionListener(new java.awt.event.ActionListener() {
@@ -78,80 +93,42 @@ public class TT1 extends javax.swing.JFrame {
                 comboServisActionPerformed(evt);
             }
         });
+        getContentPane().add(comboServis, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 120, -1));
 
         jTextField1.setBackground(new java.awt.Color(240, 240, 240));
         jTextField1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jTextField1.setText("Nama");
         jTextField1.setBorder(null);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 70, 20));
 
         jTextField2.setBackground(new java.awt.Color(240, 240, 240));
         jTextField2.setFont(new java.awt.Font("Yu Gothic", 0, 24)); // NOI18N
         jTextField2.setText("Bavaria Computer");
         jTextField2.setBorder(null);
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         jTextField3.setBackground(new java.awt.Color(240, 240, 240));
         jTextField3.setText("Tanggal Masuk");
         jTextField3.setBorder(null);
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 20));
 
         jTextField4.setBackground(new java.awt.Color(240, 240, 240));
         jTextField4.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jTextField4.setText("Servis");
         jTextField4.setBorder(null);
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 50, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(Nama, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(comboServis, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(Tgl, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboServis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tgl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(btnMasuk)
-                        .addGap(17, 17, 17)
-                        .addComponent(btnReset)
-                        .addGap(17, 17, 17)
-                        .addComponent(btnKeluar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        jTextField5.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField5.setText("Bulan");
+        jTextField5.setBorder(null);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 30, -1));
+        getContentPane().add(Bln, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 40, 30));
+
+        jTextField7.setBackground(new java.awt.Color(240, 240, 240));
+        jTextField7.setText("Tahun");
+        jTextField7.setBorder(null);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        getContentPane().add(Thn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 40, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,37 +136,53 @@ public class TT1 extends javax.swing.JFrame {
     private void btnMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasukActionPerformed
 String nama = Nama.getText();
 String tanggal = Tgl.getText();
+String bulan = Bln.getText();
+String tahun = Thn.getText();
 int tujuan = comboServis.getSelectedIndex();
 switch(tujuan){
  case (0):
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah masuk. \n Silakan Menunggu" );
- antrian.add(nama);
- antrian.add(tanggal);
+ kolomReport.setText("Pesanan atas nama "+nama+" dan servis \n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +tanggal+"/"+bulan+"/"+tahun+" telah masuk. \n Silakan Menunggu" );
+ antrianNama.add(nama);
+ antrianTanggal.add(tanggal);
+ antrianBulan.add(bulan);
+ antrianTahun.add(tahun);
  System.out.println("");
  break;
  case (1) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah masuk. \n Silakan Menunggu" ); antrian.add(nama);
- antrian.add(tanggal);
+ kolomReport.setText("Pesanan atas nama "+nama+" dan servis \n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +tanggal+"/"+bulan+"/"+tahun+" telah masuk. \n Silakan Menunggu" );
+ antrianNama.add(nama);
+ antrianTanggal.add(tanggal);
+ antrianBulan.add(bulan);
+ antrianTahun.add(tahun);
  System.out.println("");
  break;
  case (2) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah masuk. \n Silakan Menunggu" );  antrian.add(nama);
- antrian.add(tanggal);
+ kolomReport.setText("Pesanan atas nama "+nama+" dan servis \n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +tanggal+"/"+bulan+"/"+tahun+" telah masuk. \n Silakan Menunggu" );
+ antrianNama.add(nama);
+ antrianTanggal.add(tanggal);
+ antrianBulan.add(bulan);
+ antrianTahun.add(tahun);
  System.out.println("");
  break;
  case (3) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah masuk. \n Silakan Menunggu" );  antrian.add(nama);
- antrian.add(tanggal);
+ kolomReport.setText("Pesanan atas nama "+nama+" dan servis \n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +tanggal+"/"+bulan+"/"+tahun+" telah masuk. \n Silakan Menunggu" );
+ antrianNama.add(nama);
+ antrianTanggal.add(tanggal);
+ antrianBulan.add(bulan);
+ antrianTahun.add(tahun);
  System.out.println("");
  break;
  case (4) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah masuk. \n Silakan Menunggu" );  antrian.add(nama);
- antrian.add(tanggal);
+ kolomReport.setText("Pesanan atas nama "+nama+" dan servis \n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +tanggal+"/"+bulan+"/"+tahun+" telah masuk. \n Silakan Menunggu" );
+ antrianNama.add(nama);
+ antrianTanggal.add(tanggal);
+ antrianBulan.add(bulan);
+ antrianTahun.add(tahun);
  System.out.println("");
  break;
  }
@@ -211,34 +204,38 @@ kolomReport.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
-String nama = Nama.getText();
-String tanggal = Tgl.getText();
+
 int tujuan= comboServis.getSelectedIndex();
 switch(tujuan){
  case (0):
- antrian.poll();
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah selesai. \n Silakan Diambil" );
+ kolomReport.setText("Pesanan atas nama "+antrianNama.poll()+" dan servis "
+         + "\n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +antrianTanggal.poll()+"/"+antrianBulan.poll()+
+         "/"+antrianTahun.poll()+" telah selesai. \n Silakan Diambil" );        
  break;
  case (1) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah selesai. \n Silakan Diambil" );
- antrian.poll();
+ kolomReport.setText("Pesanan atas nama "+antrianNama.poll()+" dan servis "
+         + "\n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +antrianTanggal.poll()+"/"+antrianBulan.poll()+
+         "/"+antrianTahun.poll()+" telah selesai. \n Silakan Diambil" );        
  break;
  case (2) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah selesai. \n Silakan Diambil" );
- antrian.poll();
+ kolomReport.setText("Pesanan atas nama "+antrianNama.poll()+" dan servis "
+         + "\n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +antrianTanggal.poll()+"/"+antrianBulan.poll()+
+         "/"+antrianTahun.poll()+" telah selesai. \n Silakan Diambil" );        
  break;
  case (3) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah selesai. \n Silakan Diambil" );
- antrian.poll();
+ kolomReport.setText("Pesanan atas nama "+antrianNama.poll()+" dan servis "
+         + "\n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +antrianTanggal.poll()+"/"+antrianBulan.poll()+
+         "/"+antrianTahun.poll()+" telah selesai. \n Silakan Diambil" );        
  break;
  case (4) :
- kolomReport.setText("Pesanan atas nama "+nama+" dan servis "+comboServis.getItemAt(tujuan)+" pada tanggal "
-         +tanggal+" telah selesai. \n Silakan Diambil" );
- antrian.poll();
+ kolomReport.setText("Pesanan atas nama "+antrianNama.poll()+" dan servis "
+         + "\n"+comboServis.getItemAt(tujuan)+" pada tanggal "
+            +antrianTanggal.poll()+"/"+antrianBulan.poll()+
+         "/"+antrianTahun.poll()+" telah selesai. \n Silakan Diambil" );        
  break;
  }
     }//GEN-LAST:event_btnKeluarActionPerformed
@@ -283,8 +280,10 @@ switch(tujuan){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Bln;
     private javax.swing.JTextField Nama;
     private javax.swing.JTextField Tgl;
+    private javax.swing.JTextField Thn;
     private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnMasuk;
     private javax.swing.JButton btnReset;
@@ -294,6 +293,8 @@ switch(tujuan){
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextArea kolomReport;
     // End of variables declaration//GEN-END:variables
 }
